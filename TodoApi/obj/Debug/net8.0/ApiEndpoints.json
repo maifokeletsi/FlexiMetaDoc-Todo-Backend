@@ -9,7 +9,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[TodoApi.Models.Todo, TodoApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[TodoApi.DTOs.Todo.TodoResponseDto, TodoApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -28,14 +28,14 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "todo",
-        "Type": "TodoApi.Models.Todo",
+        "Name": "dto",
+        "Type": "TodoApi.DTOs.Todo.TodoRequestDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "TodoApi.Models.Todo",
+        "Type": "TodoApi.DTOs.Todo.TodoResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -61,7 +61,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "TodoApi.Models.Todo",
+        "Type": "TodoApi.DTOs.Todo.TodoResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -85,8 +85,8 @@
         "IsRequired": true
       },
       {
-        "Name": "todo",
-        "Type": "TodoApi.Models.Todo",
+        "Name": "dto",
+        "Type": "TodoApi.DTOs.Todo.TodoRequestDto",
         "IsRequired": true
       }
     ],
@@ -107,6 +107,78 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TodoApi.Controllers.UserController",
+    "Method": "GetUsers",
+    "RelativePath": "api/User",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[TodoApi.DTOs.UserResponseDto, TodoApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TodoApi.Controllers.UserController",
+    "Method": "CreateUser",
+    "RelativePath": "api/User",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "TodoApi.DTOs.UserRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "TodoApi.DTOs.UserResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TodoApi.Controllers.UserController",
+    "Method": "GetUser",
+    "RelativePath": "api/User/{email}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "TodoApi.DTOs.UserResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "TodoApi.Controllers.WeatherForecastController",
